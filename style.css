@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #6ba4e1;
+}
+.container{
+
+    max-width: 1140px;
+    width: 100%;
+    
+}
+.slider-wrapper{
+    position: relative;
+}
+.slider-wrapper .slide-button{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    font-size: 2.2rem;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.slider-wrapper .slide-button:hover{
+    background-color: white;
+    color: gray;
+}
+.slider-wrapper .slide-button#prev-slide{
+    left: -40px;
+    top: 50%;
+}
+.slider-wrapper .slide-button#next-slide{
+    right: -20px;
+    top: 50%;
+}
+.slider-wrapper .img-list{
+    font-size: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(10,1fr);
+    margin-bottom: 10px;
+    
+}
+
+.slider-wrapper .img-list::-webkit-scrollbar{
+    display: none;
+}
+.slider-wrapper .img-list .imgs-item{
+    width: 325px;
+    height: 400px;
+    object-fit: cover;
+}
+.container .scrollbar{
+    height: 24px;
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+}
+.container .scrollbar .scrollbar-pursue{
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    position: relative;
+    border-radius: 4px;
+}
+
+.container .scrollbar:hover .scrollbar-pursue{
+    height: 4px;
+}
+
+.container .scrollbar .scrollbar-pursue .scrollbar-pursue2{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background-color: black;
+    border-radius: inherit;
+    cursor: grab;
+}
+.container .scrollbar .scrollbar-pursue2:active{
+    cursor: grabbing;
+    height: 8px;
+    top: -2px;
+
+}
+.container .scrollbar .scrollbar-pursue .scrollbar-pursue2::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: -10px;
+    right: -10px;
+}
